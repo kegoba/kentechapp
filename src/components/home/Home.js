@@ -29,7 +29,7 @@ const  Home = ()=> {
       }
      
     })
-    console.log(product,"product")
+ 
     return () => loaded = false
 
   }, [])
@@ -48,6 +48,7 @@ const  Home = ()=> {
     //this.props.navigate("/men");
   };
     
+
   const feature_products  = () =>
       product.map((item , key)=> (
         <div
