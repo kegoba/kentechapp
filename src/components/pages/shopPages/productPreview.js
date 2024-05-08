@@ -2,7 +2,7 @@ import {useEffect, useState} from "react"
 import ReuseablePreview from "./reuseablepreview"
 import {useParams} from "react-router-dom"
 import axios from "axios"
-import {BASE_URL, IMAGE_URL} from "../asset/asset"
+import {BASE_URL, IMAGE_URL} from "../../asset/asset"
 
 
 

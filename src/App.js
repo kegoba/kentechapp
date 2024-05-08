@@ -9,16 +9,7 @@ import {NotificationContainer} from 'react-notifications';
 import Footer from "./components/statics/footer"
 
 import Navbar from "./components/statics/Navbar"
-import Login from  "./components/authComponent/Login"
-import Reg from "./components/authComponent/Reg";
-import Home from "./components/home/Home"
-import Cart from "./components/shopComponent/Cart"
-import Addproduct from "./components/shopComponent/addproduct"
-import Men from "./components/shopComponent/men"
-import Women from "./components/shopComponent/women"
-import Payment from "./components/paystackComponent/Payment"
-import PayInput from "./components/paystackComponent/payInput"
-import SuccessPage from "./components/paystackComponent/success"
+
 
 
 

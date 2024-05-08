@@ -14,9 +14,9 @@ import Payment from "../paystackComponent/Payment"
 import PayInput from "../paystackComponent/payInput"
 import SuccessPage from "../paystackComponent/success"
 */
-import Products from "../shopComponent/products"
-import ProductPreview from "../shopComponent/productPreview"
-import Addproduct from "../shopComponent/addproduct"
+import Products from "../pages/shopPages/products"
+import ProductPreview from "../pages/shopPages/productPreview"
+import Addproduct from "../pages/shopPages/addproduct"
 
 
 

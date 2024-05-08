@@ -4,7 +4,7 @@ import { useNavigate } from "react-router"
 import { Link} from 'react-router-dom'
 import ReuseablePreview from "./reuseablepreview"
 
-import {BASE_URL, IMAGE_URL} from "../asset/asset"
+import {BASE_URL, IMAGE_URL} from "../../asset/asset"
 
 
 

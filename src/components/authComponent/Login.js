@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import {connect} from "react-redux"
 import {BASE_URL} from "../asset/asset"
 import axios from "axios";
-import {Login_action} from "../reducerComponent/Action"
+import {Login_action} from "../reducerServices/Action"
 import "./index.css";
 
 //import { NotificationManger} from "react-notifications"
