@@ -50,7 +50,7 @@ const  Home = ()=> {
     
 
   const feature_products  = () =>
-      product.map((item , key)=> (
+      product?.map((item , key)=> (
         <div
           key={key}
           className="product-col "
