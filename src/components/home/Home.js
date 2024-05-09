@@ -82,7 +82,7 @@ const  Home = ()=> {
            <h3 className="mt-5 text-2xl"> Feature Products...</h3>
 
            {loading && <div> <h2> Loading... </h2> </div>}
-          <div className="container mobile_view mt-10 mb-10">
+           <div className="container mobile_view mt-10 mb-10">
             { !loading && <Slider
             className="featured_product-mobile-view"
               dots={false}
@@ -94,8 +94,9 @@ const  Home = ()=> {
               {feature_products()}
             </Slider>}
           </div>
+          
           <div className="container desktop_view mt-10 mb-10 h-10">
-            <Slider
+            {!loading && <Slider
               className="featured_product"
               dots={false}
               slidesToShow={4}
@@ -107,7 +108,7 @@ const  Home = ()=> {
                 
               </div>
               {feature_products()}
-            </Slider>
+            </Slider>}
           </div>
 
         
