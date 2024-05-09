@@ -28,6 +28,7 @@ const  Home = ()=> {
       try {
         const data = await getProductList();
         setProduct(data);
+        console.log(data,"home page data")
         setLoading(false)
       } catch (err) {
         console.log('Error occured when fetching books');
@@ -81,45 +82,7 @@ const  Home = ()=> {
           </div>
            <h3 className="mt-5 text-2xl"> Feature Products...</h3>
 
-           {loading && <div> <h2> Loading... </h2> </div>}
-           <div className="container mobile_view mt-10 mb-10">
-            { !loading && <Slider
-            className="featured_product-mobile-view"
-              dots={false}
-              slidesToShow={2}
-              slidesToScroll={1}
-              autoplay={true}
-              autoplaySpeed={3000}
-            >
-              {feature_products()}
-            </Slider>}
-          </div>
-          
-          <div className="container desktop_view mt-10 mb-10 h-10">
-            {!loading && <Slider
-              className="featured_product"
-              dots={false}
-              slidesToShow={4}
-              slidesToScroll={1}
-              autoplay={true}
-              autoplaySpeed={3000}
-            >
-              <div>
-                
-              </div>
-              {feature_products()}
-            </Slider>}
-          </div>
-
-        
-        </div>
-        <div>
- 
-          
-            
-         
-            
-        </div>
+           </div>
 
         <div className='pricing-app'>
         <Pricing/>
