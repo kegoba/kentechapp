@@ -3,12 +3,13 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { useNavigate } from "react-router-dom"
+import axios from 'axios';
 
 //self import component
 import Pricing from "../statics/price"
 import {AddToCart} from "../reducerServices/Action"
 import {getProductList} from "../services/productServices"
-import { IMAGE_URL} from '../asset/asset';
+import { IMAGE_URL, BASE_URL} from '../asset/asset';
 import { Gallary} from "../gallary/Gallary"
 import {NotificationManager} from "react-notifications"
 import { FaS } from 'react-icons/fa6';
@@ -22,10 +23,10 @@ const  Home = ()=> {
 
   React.useEffect(()=>{
     let loaded = true
-    getProductList()
+    axios.get(BASE_URL + "/getallproduct")
     .then(items=>{
       if (loaded){
-        setProduct(items)
+        setProduct(items.data)
       }
      
     })
