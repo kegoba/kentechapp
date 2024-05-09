@@ -21,19 +21,18 @@ const  Home = ()=> {
 
   const [product, setProduct] = useState([])
 
-  React.useEffect(()=>{
-    let loaded = true
-    axios.get(BASE_URL + "/getallproduct")
-    .then(items=>{
-      if (loaded){
-        setProduct(items.data)
-      }
-     
-    })
  
-    return () => loaded = false
-
-  }, [])
+  React.useEffect(() => {
+    (async () => {
+      try {
+        // await async "fetchBooks()" function
+        const data = await getProductList();
+        setProduct(data);
+      } catch (err) {
+        console.log('Error occured when fetching books');
+      }
+    })();
+  }, []);
   
   const handleToCart = (product_id) => {
     console.log(product_id);
