@@ -28,6 +28,7 @@ const  Home = ()=> {
         // await async "fetchBooks()" function
         const data = await getProductList();
         setProduct(data);
+        console.log(data, "data")
       } catch (err) {
         console.log('Error occured when fetching books');
       }
