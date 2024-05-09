@@ -20,15 +20,15 @@ import { FaS } from 'react-icons/fa6';
 const  Home = ()=> {
 
   const [product, setProduct] = useState([])
+  const [loading, setLoading] = useState(true)
 
  
   React.useEffect(() => {
     (async () => {
       try {
-        // await async "fetchBooks()" function
         const data = await getProductList();
         setProduct(data);
-        console.log(data, "data")
+        setLoading(false)
       } catch (err) {
         console.log('Error occured when fetching books');
       }
@@ -80,8 +80,10 @@ const  Home = ()=> {
             <Gallary />
           </div>
            <h3 className="mt-5 text-2xl"> Feature Products...</h3>
+
+           {loading && <div> <h2> Loading... </h2> </div>}
           <div className="container mobile_view mt-10 mb-10">
-            <Slider
+            { !loading && <Slider
             className="featured_product-mobile-view"
               dots={false}
               slidesToShow={2}
@@ -90,7 +92,7 @@ const  Home = ()=> {
               autoplaySpeed={3000}
             >
               {feature_products()}
-            </Slider>
+            </Slider>}
           </div>
           <div className="container desktop_view mt-10 mb-10 h-10">
             <Slider
