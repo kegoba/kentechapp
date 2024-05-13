@@ -23,7 +23,7 @@ const  Home = ()=> {
   const [loading, setLoading] = useState(true)
 
  
-  React.useEffect(() => {
+  useEffect(() => {
     (async () => {
       try {
         const data = await getProductList();
@@ -66,54 +66,25 @@ const  Home = ()=> {
            <h3 className="mt-5 text-2xl"> Feature Products...</h3>
 
          
-           <div className="container mobile_view mt-10 mb-10">
-            <Slider
-            className="featured_product-mobile-view"
-              dots={false}
-              slidesToShow={2}
-              slidesToScroll={1}
-              autoplay={true}
-              autoplaySpeed={3000}
-            >
-              
-            </Slider>
-          </div>
-          
-          <div className="container desktop_view mt-10 mb-10 h-10">
-            <Slider
-              className="featured_product"
-              dots={false}
-              slidesToShow={4}
-              slidesToScroll={1}
-              autoplay={true}
-              autoplaySpeed={3000}
-            >
-              <div>
-                
-              </div>
-            
-            </Slider>
-          </div>
+           
 
           <div>
-          {product?.map((item , key)=> (
-        <div
-          key={key}
-          className="product-col "
-          onClick={() => this.handleToCart(item.product_id)}
-        >
-          <span>
-            <img
-              className="image "
-              src={IMAGE_URL+item.image
-            }
-              alt={item.image}
-            />
-
-            &#8358;{Number(item.product_price)}
-          </span>
-        </div>
-      )) }
+          {Array.isArray(product.data) && product?.data?.map((item, key) => (
+            <div
+              key={key}
+              className="product-col"
+              onClick={() => this.handleToCart(item.product_id)}
+            >
+              <span>
+                <img
+                  className="image"
+                  src={IMAGE_URL + item.image}
+                  alt={item.image}
+                />
+                &#8358;{Number(item.product_price)}
+              </span>
+            </div>
+          ))}
           </div>
 
         
