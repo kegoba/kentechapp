@@ -5,8 +5,8 @@ import { BASE_URL } from "../asset/asset"
 
 
 
-export const getProductList = ()=> {
-    return axios.get(BASE_URL + "/getallproduct")
+export const getProductList = async ()=> {
+    return await axios.get(BASE_URL + "/getallproduct")
       .then(resp => resp.data)
   }
   

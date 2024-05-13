@@ -51,8 +51,8 @@ const  Home = ()=> {
   };
     
 
-  const feature_products  = () =>
-      product?.map((item , key)=> (
+  const feature_products  =  () =>
+        product?.map((item , key)=> (
         <div
           key={key}
           className="product-col "
@@ -69,7 +69,7 @@ const  Home = ()=> {
             &#8358;{Number(item.product_price)}
           </span>
         </div>
-      ));
+      )) 
   
 
     
@@ -82,7 +82,40 @@ const  Home = ()=> {
           </div>
            <h3 className="mt-5 text-2xl"> Feature Products...</h3>
 
-           </div>
+         
+           <div className="container mobile_view mt-10 mb-10">
+            <Slider
+            className="featured_product-mobile-view"
+              dots={false}
+              slidesToShow={2}
+              slidesToScroll={1}
+              autoplay={true}
+              autoplaySpeed={3000}
+            >
+              {feature_products()}
+            </Slider>
+          </div>
+          
+          <div className="container desktop_view mt-10 mb-10 h-10">
+            <Slider
+              className="featured_product"
+              dots={false}
+              slidesToShow={4}
+              slidesToScroll={1}
+              autoplay={true}
+              autoplaySpeed={3000}
+            >
+              <div>
+                
+              </div>
+              {feature_products()}
+            </Slider>
+          </div>
+
+        
+        </div>
+        <div>  
+        </div>
 
         <div className='pricing-app'>
         <Pricing/>
