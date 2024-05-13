@@ -51,25 +51,8 @@ const  Home = ()=> {
   };
     
 
-  const feature_products  =  () =>
-        product?.map((item , key)=> (
-        <div
-          key={key}
-          className="product-col "
-          onClick={() => this.handleToCart(item.product_id)}
-        >
-          <span>
-            <img
-              className="image "
-              src={IMAGE_URL+item.image
-            }
-              alt={item.image}
-            />
-
-            &#8358;{Number(item.product_price)}
-          </span>
-        </div>
-      )) 
+  const feature_products  =  () =>{
+        }
   
 
     
@@ -92,7 +75,7 @@ const  Home = ()=> {
               autoplay={true}
               autoplaySpeed={3000}
             >
-              {feature_products()}
+              
             </Slider>
           </div>
           
@@ -108,8 +91,29 @@ const  Home = ()=> {
               <div>
                 
               </div>
-              {feature_products()}
+            
             </Slider>
+          </div>
+
+          <div>
+          {product?.map((item , key)=> (
+        <div
+          key={key}
+          className="product-col "
+          onClick={() => this.handleToCart(item.product_id)}
+        >
+          <span>
+            <img
+              className="image "
+              src={IMAGE_URL+item.image
+            }
+              alt={item.image}
+            />
+
+            &#8358;{Number(item.product_price)}
+          </span>
+        </div>
+      )) }
           </div>
 
         
